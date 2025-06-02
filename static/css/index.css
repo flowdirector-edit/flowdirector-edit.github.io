@@ -256,3 +256,143 @@ body {
   }
 }
 
+/* Video Container Styles for Side-by-Side Display */
+.video-container {
+  position: relative;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #000;
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.video-caption {
+  margin-top: 8px;
+}
+
+.video-caption .tag {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.video-caption .tag.is-light {
+  background-color: #f5f5f5;
+  color: #363636;
+}
+
+.video-caption .tag.is-primary {
+  background-color: #00d1b2;
+  color: white;
+}
+
+/* Video Container Small Styles for Compact Display */
+.video-container-small {
+  position: relative;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  background: #000;
+}
+
+.video-container-small video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.video-caption-small {
+  margin-top: 4px;
+}
+
+.video-caption-small .tag {
+  font-weight: 500;
+  font-size: 0.7rem;
+  padding: 0.25em 0.5em;
+}
+
+.video-caption-small .tag.is-light {
+  background-color: #f5f5f5;
+  color: #363636;
+}
+
+.video-caption-small .tag.is-primary {
+  background-color: #00d1b2;
+  color: white;
+}
+
+/* Responsive video containers */
+@media (max-width: 768px) {
+  .video-container {
+    margin-bottom: 20px;
+  }
+  
+  .video-caption .tag {
+    font-size: 0.85rem;
+  }
+  
+  .video-container-small {
+    margin-bottom: 15px;
+  }
+  
+  .video-caption-small .tag {
+    font-size: 0.65rem;
+  }
+}
+
+/* Compact Video Container Styles for Grid Layout */
+.video-container-compact {
+  position: relative;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  background: #000;
+  margin-bottom: 10px;
+}
+
+.video-container-compact video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.video-caption-compact {
+  margin-top: 6px;
+}
+
+.video-caption-compact .tag {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  font-size: 0.75rem;
+}
+
+.video-caption-compact .tag.is-light {
+  background-color: #f5f5f5;
+  color: #363636;
+}
+
+.video-caption-compact .tag.is-primary {
+  background-color: #00d1b2;
+  color: white;
+}
+
+/* Responsive compact video containers */
+@media (max-width: 768px) {
+  .video-container-compact {
+    margin-bottom: 15px;
+  }
+  
+  .video-caption-compact .tag {
+    font-size: 0.7rem;
+  }
+}
