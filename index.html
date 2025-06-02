@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Academic Project Page</title>
+  <title>FlowDirector: Training-Free Flow Steering for Precise Text-to-Video Editing</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -52,21 +52,23 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">FlowDirector: Training-Free Flow Steering for Precise Text-to-Video Editing</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <a href="#" target="_blank">Guangzhao Li</a><sup>*1,2</sup>,  </span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <a href="#" target="_blank">Yanming Yang</a><sup>1</sup>,  </span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                    <a href="#" target="_blank">Chenxi Song</a><sup>1</sup>,  </span>
+                  <span class="author-block">
+                    <a href="#" target="_blank">Chi Zhang</a><sup>1†</sup>
                   </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="author-block"><sup>1</sup>AGI Lab, Westlake University &nbsp;&nbsp;&nbsp; <sup>2</sup>Central South University</span>
+                    <span class="eql-cntrb"><small><br><sup>*</sup>This work was done during Guangzhao Li's visit at AGI Lab, Westlake University.<br><sup>†</sup>Indicates corresponding author</small></span>
                   </div>
 
                   <div class="column has-text-centered">
@@ -123,32 +125,175 @@
 </section>
 
 
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
+
+<!-- Video Diff Carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">Featured Video Editing Results</h2>
+      <p class="subtitle is-12 has-text-centered has-text-grey">
+        Interactive before-and-after comparisons showcasing our editing capabilities. Drag the divider to explore.
+      </p>
+      <div id="diff-carousel" class="carousel results-carousel">
+        <!-- Bear to Panda -->
+        <div class="item">
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="featured_bear_panda">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/bear_g_02.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Brown Bear</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/bear_g_01.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: Panda</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Bear to Dinosaur -->
+        <div class="item">
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="featured_bear_dinosaur">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/bear_g.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Brown Bear</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/bear_g_03.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: Dinosaur</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Rabbit to Crochet -->
+        <div class="item">
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="featured_rabbit_crochet">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/rabbit.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Real Rabbit</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/rabbit_01.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: Crochet Rabbit</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Black Swan to Pink Flamingo -->
+        <div class="item">
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="featured_swan_flamingo">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/blackswan.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Black Swan</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/blackswan_01.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: Pink Flamingo</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Black Swan to White Duck -->
+        <div class="item">
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="featured_swan_duck">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/blackswan.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Black Swan</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/blackswan_02.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: White Duck</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Silver Jeep to Porsche -->
+        <div class="item">
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="featured_jeep_porsche">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/jeep.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Silver Jeep</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/jeep_01.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: Porsche Car</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
     </div>
   </div>
 </section>
-<!-- End teaser video -->
+<!-- End Video Diff Carousel -->
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
-  <div class="container is-max-desktop">
+  <div class="container">
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-full">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Text-driven video editing aims to modify video content according to natural language instructions.
+            While recent training-free approaches have made progress by leveraging pre-trained diffusion models, they typically rely on inversion-based techniques that map input videos into the latent space, which often leads to temporal inconsistencies and degraded structural fidelity.
+            To address this, we propose FlowDirector, a novel inversion-free video editing framework.
+            Our framework models the editing process as a direct evolution in data space, guiding the video via an Ordinary Differential Equation (ODE) to smoothly transition along its inherent spatiotemporal manifold, thereby preserving temporal coherence and structural details.
+            To achieve localized and controllable edits, we introduce an attention-guided masking mechanism that modulates the ODE velocity field, preserving non-target regions both spatially and temporally.
+            Furthermore, to address incomplete edits and enhance semantic alignment with editing instructions, we present a guidance-enhanced editing strategy inspired by Classifier-Free Guidance, which leverages differential signals between multiple candidate flows to steer the editing trajectory toward stronger semantic alignment without compromising structural consistency.
+            Extensive experiments across benchmarks demonstrate that FlowDirector achieves state-of-the-art performance in instruction adherence, temporal consistency, and background preservation, establishing a new paradigm for efficient and coherent video editing without inversion.
           </p>
         </div>
       </div>
@@ -157,106 +302,757 @@
 </section>
 <!-- End paper abstract -->
 
+<!-- Method -->
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Method</h2>
+        <!-- Method Figure -->
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <img src="static/images/method_overview.png" alt="FlowDirector Method Overview" class="method-figure">
+            <p class="has-text-left is-size-6 mt-1">
+              FlowDirector is a novel, inversion-free video editing framework operating directly in data space. It comprises three key components: (1) Editing Flow Generation, which creates direct source-to-target paths using velocity differences from a pre-trained text-to-video model, avoiding noise inversion; (2) Spatially Attentive Flow Correction (SAFC), an attention-guided mask preserving non-target regions; and (3) Differential Averaging Guidance (DAG), which uses differential velocity signals for stronger semantic alignment and structural consistency. This integrated approach yields efficient, coherent video editing with superior instruction adherence, temporal consistency, and background preservation.
+            </p>
+          </div>
+        </div>
 
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
+        </div>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
   </div>
-</div>
-</div>
 </section>
-<!-- End image carousel -->
-
+<!-- End Method -->
 
 
 
 <!-- Youtube video -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
-    <div class="container">
+    <div class="container"> -->
       <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
+      <!-- <h2 class="title is-3">Video Presentation</h2>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           
-          <div class="publication-video">
+          <div class="publication-video"> -->
             <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <!-- <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End youtube video -->
+
+
+
+<!-- Video Editing Results -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">FlowDirector Editing Results</h2>
+      
+      <!-- Bear Editing Results -->
+      <div class="section">
+        <h3 class="title is-4">Bear → Various Animals</h3>
+        <p class="subtitle is-6 has-text-grey">Transforming a brown bear into different animals while preserving motion and environment</p>
+        
+        <!-- Bear to Panda -->
+        <div class="mb-6">
+          <h4 class="title is-5">Brown Bear → Panda</h4>
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="bear_g_01">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/bear_g_02.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Brown Bear</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/bear_g_01.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: Panda</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Bear to Lion -->
+        <div class="mb-6">
+          <h4 class="title is-5">Brown Bear → Lion</h4>
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="bear_g_02">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/bear_g.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Brown Bear</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/bear_g_02.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: Lion</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Bear to Dinosaur -->
+        <div class="mb-6">
+          <h4 class="title is-5">Brown Bear → Dinosaur</h4>
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="bear_g_03">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/bear_g.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Brown Bear</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/bear_g_03.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: Dinosaur</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Rabbit Editing Results -->
+      <div class="section">
+        <h3 class="title is-4">Rabbit Style Transfer</h3>
+        <p class="subtitle is-6 has-text-grey">Converting a real rabbit into different artistic styles and materials</p>
+        
+        <!-- Rabbit to Crochet -->
+        <div class="mb-6">
+          <h4 class="title is-5">Rabbit → Crochet Rabbit</h4>
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="rabbit_01">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/rabbit.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Real Rabbit</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/rabbit_01.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: Crochet Rabbit</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Rabbit to Origami -->
+        <div class="mb-6">
+          <h4 class="title is-5">Rabbit → Origami Rabbit</h4>
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="rabbit_02">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/rabbit.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Real Rabbit</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/rabbit_02.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: Origami Rabbit</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Rabbit to Robot -->
+        <div class="mb-6">
+          <h4 class="title is-5">Rabbit → Robot Rabbit</h4>
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="rabbit_03">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/rabbit.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Real Rabbit</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/rabbit_03.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: Robot Rabbit</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Watermelon to Apple -->
+        <div class="mb-6">
+          <h4 class="title is-5">Object Replacement: Watermelon → Apple</h4>
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="rabbit_04">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/rabbit.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Eating Watermelon</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/rabbit_04.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: Eating Apple</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- More Editing Results -->
+      <div class="section">
+        <h3 class="title is-4">Animal Transformations</h3>
+        <p class="subtitle is-6 has-text-grey">Various animal-to-animal transformations showcasing species conversion capabilities</p>
+        
+        <!-- Black Swan to Pink Flamingo -->
+        <div class="mb-6">
+          <h4 class="title is-5">Black Swan → Pink Flamingo</h4>
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="blackswan_01">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/blackswan.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Black Swan</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/blackswan_01.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: Pink Flamingo</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Black Swan to White Duck -->
+        <div class="mb-6">
+          <h4 class="title is-5">Black Swan → White Duck</h4>
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="blackswan_02">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/blackswan.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Black Swan</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/blackswan_02.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: White Duck</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Wolf to Fox -->
+        <div class="mb-6">
+          <h4 class="title is-5">Wolf → Fox</h4>
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="wolf_01">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/wolf.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Wolf</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/wolf_01.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: Fox</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Wolf to Husky -->
+        <div class="mb-6">
+          <h4 class="title is-5">Wolf → Husky</h4>
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="wolf_02">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/wolf.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Wolf</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/wolf_02.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: Husky</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Human Character Editing -->
+      <div class="section">
+        <h3 class="title is-4">Human Character Editing</h3>
+        <p class="subtitle is-6 has-text-grey">Clothing changes and character transformations for human subjects</p>
+        
+        <!-- Woman Clothing Change -->
+        <div class="mb-6">
+          <h4 class="title is-5">Clothing Change: Black Dress → Blue Shirt & Jeans</h4>
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="woman_01">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/woman.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Black Dress</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/woman_01.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: Blue Shirt & Jeans</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Woman with Baseball Cap -->
+        <div class="mb-6">
+          <h4 class="title is-5">Accessory Addition: Adding Red Baseball Cap</h4>
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="woman_02">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/woman.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: No Cap</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/woman_02.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: With Red Cap</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Gym Woman to Chimpanzee -->
+        <div class="mb-6">
+          <h4 class="title is-5">Species Change: Woman → Chimpanzee</h4>
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="gym_woman_01">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/gym_woman.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Woman</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/gym_woman_01.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: Chimpanzee</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Gym Woman to Spider-Man -->
+        <div class="mb-6">
+          <h4 class="title is-5">Character Change: Woman → Spider-Man</h4>
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="gym_woman_02">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/gym_woman.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Woman</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/gym_woman_02.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: Spider-Man</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Vehicle and Object Transformations -->
+      <div class="section">
+        <h3 class="title is-4">Vehicle & Object Transformations</h3>
+        <p class="subtitle is-6 has-text-grey">Transforming vehicles and objects while maintaining motion dynamics</p>
+        
+        <!-- Jeep to Porsche -->
+        <div class="mb-6">
+          <h4 class="title is-5">Silver Jeep → Porsche Car</h4>
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="jeep_01">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/jeep.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Silver Jeep</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/jeep_01.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: Porsche Car</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Jeep to Tractor -->
+        <div class="mb-6">
+          <h4 class="title is-5">Silver Jeep → Tractor</h4>
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="jeep_02">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/jeep.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Silver Jeep</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/jeep_02.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: Tractor</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Jeep to LEGO -->
+        <div class="mb-6">
+          <h4 class="title is-5">Silver Jeep → LEGO Jeep</h4>
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="jeep_03">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/jeep.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Silver Jeep</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/jeep_03.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: LEGO Jeep</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Marine Animals -->
+      <div class="section">
+        <h3 class="title is-4">Marine Animal Transformations</h3>
+        <p class="subtitle is-6 has-text-grey">Underwater creature transformations showcasing aquatic species conversion</p>
+        
+        <!-- Sea Turtle to Dolphin -->
+        <div class="mb-6">
+          <h4 class="title is-5">Sea Turtle → Dolphin</h4>
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="sea_turtle_01">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/sea_turtle.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Sea Turtle</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/sea_turtle_01.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: Dolphin</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Sea Turtle to Seal -->
+        <div class="mb-6">
+          <h4 class="title is-5">Sea Turtle → Seal</h4>
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="sea_turtle_02">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/sea_turtle.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Sea Turtle</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/sea_turtle_02.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: Seal</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Sea Lion to Seahorse -->
+        <div class="mb-6">
+          <h4 class="title is-5">Sea Lion → Seahorse</h4>
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="sea_lion_01">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/sea_lion.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Sea Lion</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/sea_lion_01.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: Seahorse</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Sea Lion to Clownfish -->
+        <div class="mb-6">
+          <h4 class="title is-5">Sea Lion → Clownfish</h4>
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="sea_lion_02">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/sea_lion.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Sea Lion</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/sea_lion_02.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: Clownfish</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Bird Transformations -->
+      <div class="section">
+        <h3 class="title is-4">Avian Species Conversion</h3>
+        <p class="subtitle is-6 has-text-grey">Bird-to-bird transformations demonstrating feathered creature editing capabilities</p>
+        
+        <!-- Cockatiel to Blue Budgie -->
+        <div class="mb-6">
+          <h4 class="title is-5">Red Cockatiel → Blue Budgie</h4>
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="cockatiel_01">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/cockatiel.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Red Cockatiel</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/cockatiel_01.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: Blue Budgie</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Cockatiel to Eagle -->
+        <div class="mb-6">
+          <h4 class="title is-5">Red Cockatiel → Eagle</h4>
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="cockatiel_02">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/cockatiel.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Red Cockatiel</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/cockatiel_02.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: Eagle</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Cute Animal Styling -->
+      <div class="section">
+        <h3 class="title is-4">Adorable Animal Style Transfer</h3>
+        <p class="subtitle is-6 has-text-grey">Converting cute animals into different species while maintaining their charm</p>
+        
+        <!-- Puppy to Chinchilla -->
+        <div class="mb-6">
+          <h4 class="title is-5">Puppy → Chinchilla</h4>
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="puppy_01">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/puppy.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Fluffy Puppy</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/puppy_01.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: Chinchilla</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Puppy to Cat -->
+        <div class="mb-6">
+          <h4 class="title is-5">Puppy → Cat</h4>
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="puppy_02">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/puppy.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Fluffy Puppy</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/puppy_02.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: Cat</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Puppy to Koala -->
+        <div class="mb-6">
+          <h4 class="title is-5">Puppy → Koala</h4>
+          <div class="video-diff-container">
+            <div class="video-diff-wrapper" data-id="puppy_03">
+              <div class="video-left">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/puppy.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Original: Fluffy Puppy</div>
+              </div>
+              <div class="video-right">
+                <video autoplay controls muted loop>
+                  <source src="static/videos/puppy_03.mp4" type="video/mp4">
+                </video>
+                <div class="video-label">Edited: Koala</div>
+              </div>
+              <div class="divider">
+                <div class="divider-handle"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End youtube video -->
-
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
-
+<!-- End Video Editing Results -->
 
 
 <!-- Paper poster -->

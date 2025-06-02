@@ -133,5 +133,126 @@ body {
   font-size: smaller;
 }
 
+/* Video Diff Component Styles */
+.video-diff-container {
+  margin: 20px 0;
+  max-width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
+.video-diff-wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  overflow: hidden;
+  user-select: none;
+}
+
+.video-left, .video-right {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.video-left {
+  z-index: 2;
+  clip-path: inset(0 50% 0 0);
+}
+
+.video-right {
+  z-index: 1;
+}
+
+.video-left video, .video-right video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #000;
+}
+
+.video-label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.video-right .video-label {
+  left: auto;
+  right: 10px;
+}
+
+.divider {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: #fff;
+  cursor: col-resize;
+  z-index: 20;
+  transform: translateX(-50%);
+  transition: background-color 0.2s ease;
+}
+
+.divider:hover {
+  background: #007bff;
+}
+
+.divider-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 40px;
+  background: #007bff;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.divider-handle::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  margin: 0 2px;
+}
+
+.divider.dragging {
+  background: #007bff;
+}
+
+@media (max-width: 768px) {
+  .video-diff-wrapper {
+    height: 250px;
+  }
+  
+  .video-label {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+  
+  .divider-handle {
+    width: 16px;
+    height: 32px;
+  }
+}
 
