@@ -140,6 +140,38 @@ function initVideoCards() {
     // Get all video cards
     const videoCards = document.querySelectorAll('.video-card');
     
+    // Mapping of edited videos to their target words
+    const targetWords = {
+        'bear_g_01.mp4': 'large panda',
+        'rabbit_01.mp4': 'Crochet rabbit',
+        'wolf_01.mp4': 'fox',
+        'blackswan_01.mp4': 'pink flamingo',
+        'puppy_01.mp4': 'chinchilla',
+        'jeep_01.mp4': 'Porsche car',
+        'sea_turtle_01.mp4': 'dolphin',
+        'woman_02.mp4': 'woman in a black dress and a red baseball cap',
+        'cockatiel_01.mp4': 'blue budgie',
+        'dog_flower_g_01.mp4': 'golden retriever',
+        'cat_box_01.mp4': 'dogs',
+        'sea_lion_01.mp4': 'Seahorse',
+        'gym_woman_02.mp4': 'Spider-Man',
+        'bear_g_03.mp4': 'large dinosaur',
+        'rabbit_04.mp4': 'apple',
+        'blackswan_02.mp4': 'white duck',
+        'wolf_02.mp4': 'husky',
+        'puppy_02.mp4': 'cat',
+        'gym_woman_01.mp4': 'chimpanzee',
+        'cockatiel_02.mp4': 'eagle',
+        'jeep_02.mp4': 'Tractor',
+        'sea_turtle_02.mp4': 'seal',
+        'woman_01.mp4': 'woman in a blue shirt and jeans',
+        'dog_flower_g_02.mp4': 'golden retriever with a colorful collar',
+        'cat_box_02.mp4': 'kangaroo',
+        'sea_lion_02.mp4': 'Clownfish',
+        'rabbit_02.mp4': 'Origami rabbit',
+        'puppy_03.mp4': 'koala'
+    };
+    
     videoCards.forEach(function(card) {
         const originalPath = card.getAttribute('data-original');
         const video = card.querySelector('video');
@@ -148,6 +180,17 @@ function initVideoCards() {
         
         // Store the edited path
         card.setAttribute('data-edited', editedPath);
+        
+        // Get target words for this video
+        const filename = editedPath.split('/').pop();
+        const targetWord = targetWords[filename] || '';
+        
+        // Create target word overlay
+        const overlay = document.createElement('div');
+        overlay.className = 'target-word-overlay';
+        overlay.textContent = targetWord;
+        overlay.style.display = 'none';
+        card.appendChild(overlay);
         
         // Add click event listener
         card.addEventListener('click', function(e) {
@@ -158,10 +201,12 @@ function initVideoCards() {
                 // Show edited version
                 source.setAttribute('src', editedPath);
                 card.classList.remove('showing-original');
+                overlay.style.display = 'none';
             } else {
                 // Show original version
                 source.setAttribute('src', originalPath);
                 card.classList.add('showing-original');
+                overlay.style.display = 'flex';
             }
             
             // Reload the video
