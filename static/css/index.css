@@ -516,11 +516,11 @@ body {
 /* Video Card Grid Styles - Clean Grid */
 .video-card-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 180px;
-  gap: 12px;
-  padding: 40px 0;
-  max-width: 1000px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: 200px;
+  gap: 16px;
+  padding: 40px 20px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -582,10 +582,19 @@ body {
 }
 
 /* Responsive adjustments */
+@media (max-width: 1440px) {
+  .video-card-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 180px;
+    max-width: 1200px;
+  }
+}
+
 @media (max-width: 1024px) {
   .video-card-grid {
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 160px;
+    max-width: 900px;
   }
   
   /* Adjust large card pattern for tablet */
