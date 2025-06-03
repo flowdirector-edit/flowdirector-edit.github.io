@@ -20,6 +20,9 @@ $(document).ready(function() {
 
     // Video Diff Component Functionality
     initVideoDiff();
+    
+    // Video Card Click Functionality
+    initVideoCards();
 
 });
 
@@ -130,5 +133,40 @@ function initVideoDiff() {
             currentWrapper = null;
             divider.classList.remove('dragging');
         }
+    });
+}
+
+function initVideoCards() {
+    // Get all video cards
+    const videoCards = document.querySelectorAll('.video-card');
+    
+    videoCards.forEach(function(card) {
+        const originalPath = card.getAttribute('data-original');
+        const video = card.querySelector('video');
+        const source = video.querySelector('source');
+        const editedPath = source.getAttribute('src');
+        
+        // Store the edited path
+        card.setAttribute('data-edited', editedPath);
+        
+        // Add click event listener
+        card.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Toggle between original and edited
+            if (card.classList.contains('showing-original')) {
+                // Show edited version
+                source.setAttribute('src', editedPath);
+                card.classList.remove('showing-original');
+            } else {
+                // Show original version
+                source.setAttribute('src', originalPath);
+                card.classList.add('showing-original');
+            }
+            
+            // Reload the video
+            video.load();
+            video.play();
+        });
     });
 }
